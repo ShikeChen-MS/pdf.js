@@ -47,7 +47,7 @@ function initSandbox(params) {
   delete globalThis.callExternalFunction;
 
   // eslint-disable-next-line no-eval
-  const globalEval = code => globalThis.eval(code);
+  const globalEval = code => globalThis.eval(code); // CodeQL [SM04509] This usage is decided by this third party library. Skipping
   const send = data => externalCall("send", [data]);
   const proxyHandler = new ProxyHandler();
   const { data } = params;

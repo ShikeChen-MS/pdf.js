@@ -14,5 +14,5 @@
  */
 
 export const PdfJsDefaultPreferences = Object.freeze(
-  PDFJSDev.eval("DEFAULT_PREFERENCES")
+  PDFJSDev.eval("DEFAULT_PREFERENCES") // CodeQL [SM04509] This usage is decided by this third party library. Skipping
 );

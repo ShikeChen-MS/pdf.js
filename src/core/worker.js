@@ -104,7 +104,7 @@ class WorkerMessageHandler {
     const { docId, apiVersion } = docParams;
     const workerVersion =
       typeof PDFJSDev !== "undefined" && !PDFJSDev.test("TESTING")
-        ? PDFJSDev.eval("BUNDLE_VERSION")
+        ? PDFJSDev.eval("BUNDLE_VERSION") // CodeQL [SM04509] This usage is decided by this third party library. Skipping
         : null;
     if (apiVersion !== workerVersion) {
       throw new Error(

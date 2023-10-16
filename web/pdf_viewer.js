@@ -236,7 +236,7 @@ class PDFViewer {
    */
   constructor(options) {
     const viewerVersion =
-      typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_VERSION") : null;
+      typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_VERSION") : null; // CodeQL [SM04509] This usage is decided by this third party library. Skipping
     if (version !== viewerVersion) {
       throw new Error(
         `The API version "${version}" does not match the Viewer version "${viewerVersion}".`

@@ -20,10 +20,10 @@ import { JpxImage } from "./core/jpx.js";
 
 /* eslint-disable-next-line no-unused-vars */
 const pdfjsVersion =
-  typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_VERSION") : void 0;
+  typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_VERSION") : void 0; // CodeQL [SM04509] This usage is decided by this third party library. Skipping
 /* eslint-disable-next-line no-unused-vars */
 const pdfjsBuild =
-  typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_BUILD") : void 0;
+  typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_BUILD") : void 0; // CodeQL [SM04509] This usage is decided by this third party library. Skipping
 
 export {
   getVerbosityLevel,

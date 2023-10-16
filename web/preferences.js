@@ -24,7 +24,7 @@ class BasePreferences {
   #defaults = Object.freeze(
     typeof PDFJSDev === "undefined"
       ? AppOptions.getAll(OptionKind.PREFERENCE)
-      : PDFJSDev.eval("DEFAULT_PREFERENCES")
+      : PDFJSDev.eval("DEFAULT_PREFERENCES") // CodeQL [SM04509] This usage is decided by this third party library. Skipping
   );
 
   #prefs = Object.create(null);

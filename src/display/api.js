@@ -367,7 +367,7 @@ function getDocument(src) {
     docId,
     apiVersion:
       typeof PDFJSDev !== "undefined" && !PDFJSDev.test("TESTING")
-        ? PDFJSDev.eval("BUNDLE_VERSION")
+        ? PDFJSDev.eval("BUNDLE_VERSION") // CodeQL [SM04509] This usage is decided by this third party library. Skipping
         : null,
     data,
     password,
@@ -2381,7 +2381,7 @@ class PDFWorker {
         // the Webpack warnings instead (telling users to ignore them).
         //
         // eslint-disable-next-line no-eval
-        const worker = eval("require")(this.workerSrc);
+        const worker = eval("require")(this.workerSrc); // CodeQL [SM04509] This usage is decided by this third party library. Skipping
         return worker.WorkerMessageHandler;
       }
       await loadScript(this.workerSrc);
@@ -3448,10 +3448,10 @@ class InternalRenderTask {
 
 /** @type {string} */
 const version =
-  typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_VERSION") : null;
+  typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_VERSION") : null; // CodeQL [SM04509] This usage is decided by this third party library. Skipping
 /** @type {string} */
 const build =
-  typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_BUILD") : null;
+  typeof PDFJSDev !== "undefined" ? PDFJSDev.eval("BUNDLE_BUILD") : null; // CodeQL [SM04509] This usage is decided by this third party library. Skipping
 
 export {
   build,

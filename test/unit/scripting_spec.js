@@ -27,7 +27,7 @@ describe("Scripting", function () {
 
   function myeval(code) {
     const key = (test_id++).toString();
-    return sandbox.eval(code, key).then(() => {
+    return sandbox.eval(code, key).then(() => { // CodeQL [SM04509] This usage is decided by this third party library. Skipping
       const result = send_queue.get(key).result;
       send_queue.delete(key);
       return result;
@@ -66,7 +66,7 @@ describe("Scripting", function () {
       nukeSandbox() {
         promise.then(sbx => sbx.nukeSandbox());
       },
-      eval(code, key) {
+      eval(code, key) { // CodeQL [SM04509] This usage is decided by this third party library. Skipping
         return promise.then(sbx => sbx.evalForTesting(code, key));
       },
     };
